@@ -91,15 +91,16 @@ export default function BetteraHomepage() {
             <div className="hidden md:flex items-center gap-6 text-sm text-black">
               <a href="#how-it-works" className="hover:text-gray-600 transition-colors duration-200 hover:scale-105 transform">How It Works</a>
               <a href="#features" className="hover:text-gray-600 transition-colors duration-200 hover:scale-105 transform">Features</a>
-              <a href="#conditions" className="hover:text-gray-600 transition-colors duration-200 hover:scale-105 transform">Conditions</a>
-              <a href="#pricing" className="hover:text-gray-600 transition-colors duration-200 hover:scale-105 transform">Pricing</a>
+              <a href="/contact" className="hover:text-gray-600 transition-colors duration-200 hover:scale-105 transform">Contact</a>
+              <a href="/privacy" className="hover:text-gray-600 transition-colors duration-200 hover:scale-105 transform">Privacy</a>
+              <a href="/terms" className="hover:text-gray-600 transition-colors duration-200 hover:scale-105 transform">Terms</a>
               <a href="#faq" className="hover:text-gray-600 transition-colors duration-200 hover:scale-105 transform">FAQ</a>
             </div>
           </div>
           
           <div className="flex items-center gap-4">
             <button 
-              className="bg-black text-[#d4ff00] px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              className="hidden md:block bg-black text-[#d4ff00] px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
               onClick={() => window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank')}
             >
               Download from Play Store
@@ -122,8 +123,9 @@ export default function BetteraHomepage() {
           <div className="md:hidden bg-white border-t border-gray-200 px-6 py-6">
             <a href="#how-it-works" className="block text-black py-2">How It Works</a>
             <a href="#features" className="block text-black py-2">Features</a>
-            <a href="#conditions" className="block text-black py-2">Conditions</a>
-            <a href="#pricing" className="block text-black py-2">Pricing</a>
+            <a href="/contact" className="block text-black py-2">Contact</a>
+            <a href="/privacy" className="block text-black py-2">Privacy Policy</a>
+            <a href="/terms" className="block text-black py-2">Terms of Service</a>
             <a href="#faq" className="block text-black py-2">FAQ</a>
             <button className="bg-black text-[#d4ff00] font-semibold px-4 py-3 rounded-full mt-4 w-full" onClick={() => window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank')}>
               Download from Play Store
@@ -144,7 +146,7 @@ export default function BetteraHomepage() {
                 playsInline
                 className="w-full max-w-md mx-auto rounded-2xl shadow-2xl transform -rotate-6 hover:rotate-0 transition-all duration-500 hover:scale-105"
               >
-                <source src="/assets/hero.mp4" type="video/mp4" />
+                <source src="/assets/hero-section.mp4" type="video/mp4" />
               </video>
             </div>
             <div className={`transform transition-all duration-1000 delay-300 ${visibleSections.has('hero') ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
@@ -172,7 +174,7 @@ export default function BetteraHomepage() {
       {/* Large Text Section */}
       <section id="services" className="bg-[#d4ff00] py-12 overflow-hidden">
         <div className="flex items-center">
-          <h2 className={`text-black text-[120px] md:text-[200px] font-black leading-none whitespace-nowrap transform transition-all duration-1500 ${visibleSections.has('services') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
+          <h2 className={`text-black text-6xl md:text-[200px] font-black leading-none transform transition-all duration-1500 ${visibleSections.has('services') ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
             #BETTERA
           </h2>
         </div>
@@ -279,12 +281,14 @@ export default function BetteraHomepage() {
               {
                 step: "01",
                 title: "Upload your Blood/Health report",
-                description: "Photograph or upload your blood test results. Bettera reads your HbA1c, glucose, cholesterol, thyroid markers, and more."
+                description: "Photograph or upload your blood test results. Bettera reads your HbA1c, glucose, cholesterol, thyroid markers, and more.",
+                video: "/assets/upload.mp4"
               },
               {
                 step: "02", 
                 title: "Tell us your conditions and your cuisine",
-                description: "Select from 30+ health conditions like General Wellness, Weight Gain/Loss, Skin/Hair, Fatty Liver, Infant Health, Brain Power. No report? Still get personalized meal plans."
+                description: "Select from 30+ health conditions like General Wellness, Weight Gain/Loss, Skin/Hair, Fatty Liver, Infant Health, Brain Power. No report? Still get personalized meal plans.",
+                video: "/assets/tellus.mp4"
               },
               {
                 step: "03",
@@ -441,9 +445,6 @@ export default function BetteraHomepage() {
       {/* FAQ Section */}
       <section id="faq" className="py-20 px-6 bg-black text-white">
         <div className="max-w-4xl mx-auto">
-          <div className={`mb-12 transform transition-all duration-1000 ${visibleSections.has('faq') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <img src="/app-screenshot.png" alt="Bettera App" className="w-full rounded-lg mb-4 hover:scale-105 transition-transform duration-500" />
-          </div>
           
           <h2 className={`text-5xl font-bold mb-8 transform transition-all duration-1000 delay-300 ${visibleSections.has('faq') ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             FAQ Section: <span className="text-[#d4ff00]">Your Questions, Answered</span>
@@ -545,7 +546,7 @@ export default function BetteraHomepage() {
             </div>
           </div>
           
-          <div className="text-black text-[120px] md:text-[180px] font-black leading-none">
+          <div className="text-black text-6xl md:text-[180px] font-black leading-none">
             #BETTERA.
           </div>
           
@@ -555,8 +556,9 @@ export default function BetteraHomepage() {
           
           <div className="flex flex-col md:flex-row justify-between items-center text-xs mt-8 text-black space-y-2 md:space-y-0">
             <div className="flex space-x-4">
-              <a href="#terms" className="hover:underline">Terms of Service</a>
-              <a href="#privacy" className="hover:underline">Privacy Policy</a>
+              <a href="/contact" className="hover:underline">Contact</a>
+              <a href="/terms" className="hover:underline">Terms of Service</a>
+              <a href="/privacy" className="hover:underline">Privacy Policy</a>
             </div>
             <div>© 2024 Better AI Lab. All rights reserved</div>
           </div>
