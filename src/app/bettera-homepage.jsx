@@ -2,9 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useAnalytics } from '../hooks/useAnalytics';
 
 export default function BetteraHomepage() {
   const router = useRouter();
+  const analytics = useAnalytics();
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [isScrolled, setIsScrolled] = useState(false);
@@ -101,7 +103,10 @@ export default function BetteraHomepage() {
           <div className="flex items-center gap-4">
             <button 
               className="hidden md:block bg-black text-[#d4ff00] px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              onClick={() => window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank')}
+              onClick={() => {
+                analytics.trackAppDownload('hero_section');
+                window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank');
+              }}
             >
               Download from Play Store
             </button>
@@ -127,7 +132,10 @@ export default function BetteraHomepage() {
             <a href="/privacy" className="block text-black py-2">Privacy Policy</a>
             <a href="/terms" className="block text-black py-2">Terms of Service</a>
             <a href="#faq" className="block text-black py-2">FAQ</a>
-            <button className="bg-black text-[#d4ff00] font-semibold px-4 py-3 rounded-full mt-4 w-full" onClick={() => window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank')}>
+            <button className="bg-black text-[#d4ff00] font-semibold px-4 py-3 rounded-full mt-4 w-full" onClick={() => {
+                analytics.trackAppDownload('hero_section');
+                window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank');
+              }}>
               Download from Play Store
             </button>
           </div>
@@ -159,7 +167,10 @@ export default function BetteraHomepage() {
               </p>
               <button 
                 className="bg-black text-[#d4ff00] px-8 py-4 rounded-full font-medium hover:bg-gray-900 transition-all duration-300 mt-6 hover:scale-105 hover:shadow-xl transform"
-                onClick={() => window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank')}
+                onClick={() => {
+                analytics.trackAppDownload('hero_section');
+                window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank');
+              }}
               >
                 Download from Play Store
               </button>
@@ -422,7 +433,10 @@ export default function BetteraHomepage() {
               </ul>
               <button 
                 className="bg-black text-[#d4ff00] px-8 py-4 rounded-full font-medium hover:bg-gray-900 transition-all duration-300 hover:scale-105 hover:shadow-xl transform"
-                onClick={() => window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank')}
+                onClick={() => {
+                analytics.trackAppDownload('hero_section');
+                window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank');
+              }}
               >
                 Start Your Health Journey
               </button>
@@ -503,7 +517,10 @@ export default function BetteraHomepage() {
             <h3 className="text-2xl font-bold mb-4">Download Bettera now</h3>
             <button 
               className="bg-[#d4ff00] text-black px-8 py-3 rounded-full font-medium hover:bg-[#c4ef00] transition-all duration-300 hover:scale-110 hover:shadow-lg"
-              onClick={() => window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank')}
+              onClick={() => {
+                analytics.trackAppDownload('hero_section');
+                window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank');
+              }}
             >
               Download from Play Store
             </button>

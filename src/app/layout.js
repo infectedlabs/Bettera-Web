@@ -1,4 +1,5 @@
 import "./globals.css";
+import { GA_MEASUREMENT_ID, ANALYTICS_ENABLED } from '../config/analytics';
 
 export const metadata = {
   title: {
@@ -78,6 +79,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics 4 */}
+        {ANALYTICS_ENABLED && (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_MEASUREMENT_ID}');
+                `,
+              }}
+            />
+          </>
+        )}
+      </head>
       <body className="antialiased">
         {children}
       </body>

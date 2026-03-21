@@ -1,9 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useAnalytics } from '../../../hooks/useAnalytics';
 
 export default function Type2DiabetesDietPlan() {
+  const analytics = useAnalytics();
   const [openFaq, setOpenFaq] = useState(0);
+
+  useEffect(() => {
+    analytics.trackBlogView('Type 2 Diabetes Diet Plan');
+  }, [analytics]);
 
   const faqs = [
     {
@@ -51,7 +57,10 @@ export default function Type2DiabetesDietPlan() {
               </p>
               <button 
                 className="w-full bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105"
-                onClick={() => window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank')}
+                onClick={() => {
+                analytics.trackAppDownload('blog_hero');
+                window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank');
+              }}
               >
                 Download Bettera App
               </button>
@@ -367,13 +376,19 @@ export default function Type2DiabetesDietPlan() {
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
                 className="flex-1 bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105"
-                onClick={() => window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank')}
+                onClick={() => {
+                analytics.trackAppDownload('blog_hero');
+                window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank');
+              }}
               >
                 Download Bettera App
               </button>
               <button 
                 className="flex-1 bg-[#d4ff00] text-black px-6 py-3 rounded-full font-bold hover:bg-[#c4ef00] transition-all duration-300 hover:scale-105"
-                onClick={() => window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank')}
+                onClick={() => {
+                analytics.trackAppDownload('blog_hero');
+                window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank');
+              }}
               >
                 Start Free Trial
               </button>
@@ -423,7 +438,10 @@ export default function Type2DiabetesDietPlan() {
             </p>
             <button 
               className="bg-black text-[#d4ff00] px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-900 transition-all duration-300 hover:scale-105"
-              onClick={() => window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank')}
+              onClick={() => {
+                analytics.trackAppDownload('blog_hero');
+                window.open('https://play.google.com/store/apps/details?id=com.bettera.app', '_blank');
+              }}
             >
               Get Started with Bettera
             </button>
