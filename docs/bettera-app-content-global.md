@@ -1421,7 +1421,7 @@ Always consult your doctor before making significant dietary changes.
 
 Developer: Better AI Lab
 Website: bettera.app
-Contact: hello@bettera.app
+Contact: support@bettera.app
 ```
 
 ---
@@ -1653,7 +1653,7 @@ That is what Bettera is for.
 
 COMPANY: Better AI Lab
 FOUNDED: 2024
-CONTACT: hello@bettera.app
+CONTACT: support@bettera.app
 WEBSITE: bettera.app
 ```
 
@@ -1694,4 +1694,4 @@ BETTERA VALUE:
 *Document Version: 2.0 — Global-First*
 *Prepared by: Better AI Lab*
 *For use in: Website copy, App Store listings, Marketing materials*
-*Website: bettera.app | Contact: hello@bettera.app*
+*Website: bettera.app | Contact: support@bettera.app*

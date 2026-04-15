@@ -1,8 +1,11 @@
 // Google Analytics utilities for Bettera website
 
+// Check if we're in a browser environment
+const isBrowser = typeof window !== 'undefined';
+
 // Track page views
 export const pageView = (url) => {
-  if (typeof window !== 'undefined' && window.gtag) {
+  if (isBrowser && window.gtag) {
     window.gtag('config', 'G-YOUR_MEASUREMENT_ID', {
       page_path: url,
     });
@@ -11,7 +14,7 @@ export const pageView = (url) => {
 
 // Track custom events
 export const trackEvent = (action, category, label, value) => {
-  if (typeof window !== 'undefined' && window.gtag) {
+  if (isBrowser && window.gtag) {
     window.gtag('event', action, {
       event_category: category,
       event_label: label,
@@ -65,7 +68,7 @@ export const trackEngagement = (type, duration) => {
 export const trackPurchase = (productId, amount, currency = 'INR') => {
   trackEvent('purchase', 'ecommerce', productId, amount);
   
-  if (typeof window !== 'undefined' && window.gtag) {
+  if (isBrowser && window.gtag) {
     window.gtag('event', 'purchase', {
       transaction_id: `T${Date.now()}`,
       value: amount,
@@ -82,7 +85,7 @@ export const trackPurchase = (productId, amount, currency = 'INR') => {
 
 // Track user demographics (if collected)
 export const trackUserDemographics = (age, gender) => {
-  if (typeof window !== 'undefined' && window.gtag) {
+  if (isBrowser && window.gtag) {
     window.gtag('set', 'user_properties', {
       age: age,
       gender: gender
@@ -92,7 +95,7 @@ export const trackUserDemographics = (age, gender) => {
 
 // Custom dimensions for Bettera-specific metrics
 export const trackHealthCondition = (condition) => {
-  if (typeof window !== 'undefined' && window.gtag) {
+  if (isBrowser && window.gtag) {
     window.gtag('set', 'user_properties', {
       health_condition: condition
     });
@@ -100,7 +103,7 @@ export const trackHealthCondition = (condition) => {
 };
 
 export const trackCuisinePreference = (cuisine) => {
-  if (typeof window !== 'undefined' && window.gtag) {
+  if (isBrowser && window.gtag) {
     window.gtag('set', 'user_properties', {
       cuisine_preference: cuisine
     });

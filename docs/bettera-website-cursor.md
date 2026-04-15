@@ -1242,7 +1242,7 @@ export default function JsonLd({ type, condition, blogTitle, blogDescription, bl
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      email: 'hello@bettera.app',
+      email: 'support@bettera.app',
     },
     sameAs: [
       'https://instagram.com/betteraapp',
@@ -1847,7 +1847,7 @@ export default function Footer() {
                 { label: 'Blog', href: '/blog' },
                 { label: 'Privacy Policy', href: '/privacy' },
                 { label: 'Terms of Service', href: '/terms' },
-                { label: 'Contact', href: 'mailto:hello@bettera.app' },
+                { label: 'Contact', href: 'mailto:support@bettera.app' },
               ].map(link => (
                 <li key={link.label}>
                   <a href={link.href} className="text-[#555] hover:text-white transition-colors text-sm">

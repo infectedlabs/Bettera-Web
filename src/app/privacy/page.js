@@ -61,7 +61,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-semibold text-black mb-4">Contact Us</h2>
             <p>
-              If you have questions about this Privacy Policy or your data rights, please contact us at hello@bettera.app
+              If you have questions about this Privacy Policy or your data rights, please contact us at support@bettera.app
             </p>
           </section>
 

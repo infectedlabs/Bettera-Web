@@ -100,7 +100,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="font-semibold text-black">Email</div>
-                      <div className="text-gray-600">hello@bettera.app</div>
+                      <div className="text-gray-600">support@bettera.app</div>
                     </div>
                   </div>
                   

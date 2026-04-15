@@ -1,28 +1,16 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import * as analytics from '../lib/analytics';
 
 export const useAnalytics = () => {
-  const router = useRouter();
+  const pathname = usePathname();
 
   // Track page views on route changes
   useEffect(() => {
-    const handleRouteChange = (url) => {
-      analytics.pageView(url);
-    };
-
-    // Initial page view
-    if (router.isReady) {
-      analytics.pageView(router.asPath);
+    if (pathname) {
+      analytics.pageView(pathname);
     }
-
-    // Listen for route changes
-    router.events.on('routeChangeComplete', handleRouteChange);
-
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [router]);
+  }, [pathname]);
 
   // Return tracking functions for easy use in components
   return {

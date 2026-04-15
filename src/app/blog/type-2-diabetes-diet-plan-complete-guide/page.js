@@ -8,7 +8,10 @@ export default function Type2DiabetesDietPlan() {
   const [openFaq, setOpenFaq] = useState(0);
 
   useEffect(() => {
-    analytics.trackBlogView('Type 2 Diabetes Diet Plan');
+    // Only track blog view on client side
+    if (typeof window !== 'undefined') {
+      analytics.trackBlogView('Type 2 Diabetes Diet Plan');
+    }
   }, [analytics]);
 
   const faqs = [

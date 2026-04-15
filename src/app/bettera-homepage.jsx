@@ -1,11 +1,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useAnalytics } from '../hooks/useAnalytics';
 
 export default function BetteraHomepage() {
-  const router = useRouter();
   const analytics = useAnalytics();
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSections, setVisibleSections] = useState(new Set());
